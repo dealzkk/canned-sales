@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Canned Messages Tool</title>
+
+  <!-- Load Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      background-color: #f5f6f7;
+    }
+    .hidden-text {
+      display: none;
+    }
+    .copied-label {
+      font-size: 0.9rem;
+      color: green;
+      margin-left: 10px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .copied-label.visible {
+      opacity: 1;
+    }
+	.list-group-item div span {
+	word-wrap: break-word;
+	word-break: break-word;
+	}
+  </style>
+</head>
+<body>
+  <div class="d-flex justify-content-center align-items-center vh-100">
+      <div class="container mt-4">
+
+<!-- ORDER GROUP -->
+<h3 class="mt-1">Order</h3>      
+<div class="list-group">
+<!-- Message 1 -->
+<div class="list-group-item d-flex align-items-center">
+<span class="me-3 text-secondary" onclick="copyBoth('messageOrdUnitOnly', 'copied-labelOrdUnitOnly')" style="cursor: pointer;"><i class="fas fa-copy"></i></span>
+<div>
+<span>Unit Only</span>
+<span id="copied-labelOrdUnitOnly" class="copied-label">Ok</span>
+</div>
+<span id="messageOrdUnitOnly" class="hidden-text">Ang item na ito ay Unit Only. Ibig pong sabihin nito, walang ibang inclusions. Ang kasama lang ay ang mismong cellphone, at walang kasamang charger, charging brick, o iba pang accessories.</span>
+</div>
+<!-- End Message 1 -->
+        </div>
+
+
+<!-- END ORDER GROUP -->
+	      
+<!-- EXPRESS GROUP -->
+<h3 class="mt-1">Express</h3>      
+<div class="list-group">
+<!-- Message 1 -->
+<div class="list-group-item d-flex align-items-center">
+<span class="me-3 text-secondary" onclick="copyBoth('messageExpNewOpen', 'copied-labelExpNewOpen')" style="cursor: pointer;"><i class="fas fa-copy"></i></span>
+<div>
+<span>New - Open?</span>
+<span id="copied-labelExpNewOpen" class="copied-label">Ok</span>
+</div>
+<span id="messageExpNewOpen" class="hidden-text">Ang na-order po ninyong unit ay brand new. Bago po namin ito i-ship, please let us know kung anong option ang prefer ninyo:
+
+1. Ipadala namin as-is ang unit
+2. I-check ang unit bago ipadala
+
+※ Hindi po kami makakapag-provide ng video ng unit due to the number of orders na pina-process ng warehouse.
+
+Kindly inform us. Thank you!</span>
+</div>
+<!-- End Message 1 -->
+<!-- Message 2 -->
+<div class="list-group-item d-flex align-items-center">
+<span class="me-3 text-secondary" onclick="copyBoth('messageExpPPHowTo', 'copied-labelExpPPHowTo')" style="cursor: pointer;"><i class="fas fa-copy"></i></span>
+<div>
+<span>PayPal How-To</span>
+<span id="copied-labelExpPPHowTo" class="copied-label">Ok</span>
+</div>
+<span id="messageExpPPHowTo" class="hidden-text">Paki-visit po ang link na ito para makita ang tutorial on how to settle your PayPal invoice: https://drive.google.com/file/d/1tTKJWxDigsP-nyHTUY81aQsrTbVXEwr2/view?usp=drive_link</span>
+</div>
+<!-- End Message 2 -->
+        </div>
+
+
+<!-- END EXPRESS GROUP -->
+	      
+<!-- TRACKING GROUP -->
+<h3 class="mt-1">Tracking</h3>      
+<div class="list-group">
+<!-- Message 1 -->
+<div class="list-group-item d-flex align-items-center">
+<span class="me-3 text-secondary" onclick="copyBoth('messageYamato', 'copied-labelYamato')" style="cursor: pointer;"><i class="fas fa-copy"></i></span>
+<div>
+<span>Yamato</span>
+<span id="copied-labelYamato" class="copied-label">Ok</span>
+</div>
+<span id="messageYamato" class="hidden-text">Na-ship out na po namin ang inyong order. 
+Please note the following details:
+
+Tracking Number: 
+Courier: Yamato
+
+Pwede niyo pong ma-track ang order via this link:
+https://track.kuronekoyamato.co.jp/english/tracking
+
+Maraming salamat po sa inyong order! 🥰</span>
+</div>
+<!-- End Message 1 -->
+<!-- Message 2 -->
+<div class="list-group-item d-flex align-items-center">
+<span class="me-3 text-secondary" onclick="copyBoth('messageSagawa', 'copied-labelSagawa')" style="cursor: pointer;"><i class="fas fa-copy"></i></span>
+<div>
+<span>Sagawa</span>
+<span id="copied-labelSagawa" class="copied-label">Ok</span>
+</div>
+<span id="messageSagawa" class="hidden-text">Na-ship out na po namin ang inyong order. 
+Please note the following details:
+
+Tracking Number: 
+Courier: Sagawa
+
+Pwede niyo pong ma-track ang order via this link:
+https://k2k.sagawa-exp.co.jp/p/sagawa/web/okurijosearcheng.jsp
+
+Maraming salamat po sa inyong order! 🥰</span>
+</div>
+<!-- End Message 2 -->
+<!-- Message 3 -->
+<div class="list-group-item d-flex align-items-center">
+<span class="me-3 text-secondary" onclick="copyBoth('messageExpress', 'copied-labelExpress')" style="cursor: pointer;"><i class="fas fa-copy"></i></span>
+<div>
+<span>Express</span>
+<span id="copied-labelExpress" class="copied-label">Ok</span>
+</div>
+<span id="messageExpress" class="hidden-text">Naprocess na po naming ang inyong package for shipment.
+Please note the following details:
+
+Tracking Number: {name}
+Courier: LBC Express
+Flight Date: 
+Delivery Date (after flight date): 
+
+Pwede niyo pong ma-track ang order via this link:
+https://www.lbcexpress.com/track/
+
+Maraming salamat po sa inyong order! 🥰</span>
+</div>
+<!-- End Message 3 -->
+        </div>
+
+<!-- END TRACKING GROUP -->
+
+<!-- ACCOUNTING GROUP -->
+<h3 class="mt-1">Accounting</h3>      
+<div class="list-group">
+<!-- Message 1 -->
+<div class="list-group-item d-flex align-items-center">
+<span class="me-3 text-secondary" onclick="copyBoth('messageAccPayConf', 'copied-labelAccPayConf')" style="cursor: pointer;"><i class="fas fa-copy"></i></span>
+<div>
+<span>Payment Confirmed</span>
+<span id="copied-labelAccPayConf" class="copied-label">Ok</span>
+</div>
+<span id="messageAccPayConf" class="hidden-text">Hello po! Your payment has been confirmed by Yehey Japan Accounting. Thank you very much. 
+Pakihintay po ang update ng Sales team for further assistance. 😄</span>
+</div>
+<!-- End Message 1 -->
+        </div>
+
+
+<!-- END ACCOUNTING GROUP -->
+    </div>
+    </div>
+  </div>
+
+  <script>
+    function copyBoth(elementId, labelId) {
+      const text = document.getElementById(elementId).textContent.trim();
+      const textarea = document.createElement('textarea');
+      textarea.value = text;
+      document.body.appendChild(textarea);
+      textarea.select();
+      document.execCommand('copy');
+      document.body.removeChild(textarea);
+
+      const label = document.getElementById(labelId);
+      label.classList.add('visible');
+      setTimeout(() => {
+        label.classList.remove('visible');
+      }, 3000);
+    }
+  </script>
+
+</body>
+</html>
